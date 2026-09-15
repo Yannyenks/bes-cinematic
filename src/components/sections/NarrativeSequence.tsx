@@ -32,7 +32,7 @@ export function NarrativeSequence({
     <div ref={railRef} className="relative space-y-10 pl-8 md:pl-10">
       <div className="absolute bottom-0 left-0 top-1 hidden w-px bg-white/10 md:block" />
       <div
-        className="absolute left-0 top-1 hidden w-px bg-gradient-to-b from-cyan via-magenta to-cyan transition-all duration-[2200ms] ease-out md:block"
+        className="absolute left-0 top-1 hidden w-px bg-cyan transition-all duration-[2200ms] ease-out md:block"
         style={{ height: active ? "100%" : "0%" }}
       />
 

@@ -20,7 +20,7 @@ export function Footprint() {
         <Reveal>
           <div className="mb-16 max-w-2xl">
             <span className="font-display mb-6 inline-flex items-center gap-3 text-[0.78rem] font-bold uppercase tracking-[0.22em] text-cyan">
-              <span className="h-px w-9 bg-gradient-to-r from-cyan to-magenta" />
+              <span className="h-px w-9 bg-cyan" />
               Notre rayonnement
             </span>
             <h2 className="font-display text-[clamp(1.9rem,4vw,3.2rem)] font-extrabold leading-[1.12] text-white">
@@ -42,7 +42,7 @@ export function Footprint() {
                   {loc.name}
                 </h3>
                 <p className="mt-1 text-sm text-white/50">{loc.zone}</p>
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-cyan to-magenta transition-transform duration-300 group-hover:scale-x-100" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-cyan transition-transform duration-300 group-hover:scale-x-100" />
               </div>
             </Reveal>
           ))}

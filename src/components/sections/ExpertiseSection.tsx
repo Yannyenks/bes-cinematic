@@ -11,18 +11,10 @@ export function ExpertiseSection() {
       id="expertises"
       className="relative overflow-hidden bg-black py-28 md:py-36"
     >
-      <div
-        className="pointer-events-none absolute -left-1/4 top-1/3 h-[40rem] w-[40rem] rounded-full opacity-20 blur-[120px]"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(47,168,224,0.6), transparent)",
-        }}
-      />
-
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <Reveal>
           <span className="font-display mb-6 inline-flex items-center gap-3 text-[0.78rem] font-bold uppercase tracking-[0.22em] text-magenta">
-            <span className="h-px w-9 bg-gradient-to-r from-magenta to-cyan" />
+            <span className="h-px w-9 bg-magenta" />
             Nos domaines d&apos;expertise
           </span>
         </Reveal>
@@ -48,7 +40,7 @@ export function ExpertiseSection() {
               className={OFFSETS[i]}
             >
               <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-9 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-white/[0.06]">
-                <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-magenta to-cyan transition-transform duration-500 group-hover:scale-x-100" />
+                <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-magenta transition-transform duration-500 group-hover:scale-x-100" />
 
                 <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-magenta transition-colors duration-300 group-hover:text-cyan">
                   <ExpertiseIcon icon={item.icon} />

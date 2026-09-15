@@ -25,7 +25,7 @@ export function Testimonials() {
       <div className="relative z-10 mx-auto max-w-5xl px-6 md:px-10">
         <Reveal direction="left">
           <span className="font-display mb-6 inline-flex items-center gap-3 text-[0.78rem] font-bold uppercase tracking-[0.22em] text-cyan">
-            <span className="h-px w-9 bg-gradient-to-r from-cyan to-magenta" />
+            <span className="h-px w-9 bg-cyan" />
             Leurs retours sur expérience
           </span>
         </Reveal>

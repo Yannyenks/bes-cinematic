@@ -23,7 +23,7 @@ export function MissionMap({
   onSelect: (i: number) => void;
 }) {
   return (
-    <div className="relative h-[62vh] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent md:h-[68vh]">
+    <div className="relative h-[62vh] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] md:h-[68vh]">
       <MissionMap3D onSelect={onSelect} selected={selected} />
 
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between p-5 md:p-7">

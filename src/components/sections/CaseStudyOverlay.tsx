@@ -48,7 +48,7 @@ export function CaseStudyOverlay({
       >
         <div
           className="relative flex h-64 items-end p-8 md:h-80"
-          style={{ background: project?.gradient }}
+          style={{ background: project?.color }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-midnight via-black/20 to-transparent" />
           <MediaPlaceholder label="Vidéo à venir" kind="video" />
@@ -82,7 +82,7 @@ export function CaseStudyOverlay({
             Galerie photo de l&apos;évènement
           </p>
           {project && (
-            <PhotoCarousel count={10} gradient={project.gradient} />
+            <PhotoCarousel count={10} color={project.color} />
           )}
 
           <a

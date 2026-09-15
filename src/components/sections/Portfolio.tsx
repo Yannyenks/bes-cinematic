@@ -17,7 +17,7 @@ export function Portfolio() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <Reveal direction="scale">
           <span className="font-display mb-6 inline-flex items-center gap-3 text-[0.78rem] font-bold uppercase tracking-[0.22em] text-magenta">
-            <span className="h-px w-9 bg-gradient-to-r from-magenta to-cyan" />
+            <span className="h-px w-9 bg-magenta" />
             Nos réalisations
           </span>
         </Reveal>

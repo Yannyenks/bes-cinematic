@@ -30,7 +30,7 @@ export function ProjectPanel({
       <div
         ref={bgRef}
         className="absolute -inset-8 scale-105 transition-transform duration-700 ease-out group-hover:scale-110"
-        style={{ background: project.gradient }}
+        style={{ background: project.color }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/50 transition-opacity duration-500 group-hover:from-black/75" />
       <MediaPlaceholder label="Vidéo / photo à venir" kind="video" />

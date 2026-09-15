@@ -5,7 +5,7 @@ export type GallerySlot = {
 export type Gallery = {
   tag: string;
   title: string;
-  gradient: string;
+  color: string;
   slots: GallerySlot[];
 };
 
@@ -13,7 +13,7 @@ export const AGENCY_GALLERIES: Gallery[] = [
   {
     tag: "L'étincelle",
     title: "Séquence 01 — L'étincelle",
-    gradient: "linear-gradient(160deg,#1B2F73,#E5007D)",
+    color: "#16255C",
     slots: [
       { span: "tall" },
       {},
@@ -28,7 +28,7 @@ export const AGENCY_GALLERIES: Gallery[] = [
   {
     tag: "Le déclic",
     title: "Séquence 02 — Le déclic",
-    gradient: "linear-gradient(160deg,#2FA8E0,#16255C)",
+    color: "#2FA8E0",
     slots: [
       {},
       { span: "wide" },
@@ -43,7 +43,7 @@ export const AGENCY_GALLERIES: Gallery[] = [
   {
     tag: "La mission",
     title: "Séquence 03 — La mission",
-    gradient: "linear-gradient(160deg,#E5007D,#7A1FA0)",
+    color: "#E5007D",
     slots: [
       { span: "tall" },
       {},
@@ -58,7 +58,7 @@ export const AGENCY_GALLERIES: Gallery[] = [
   {
     tag: "Le protocole",
     title: "Séquence 04 — Le protocole",
-    gradient: "linear-gradient(160deg,#16255C,#2FA8E0)",
+    color: "#0E1A44",
     slots: [
       {},
       {},
@@ -73,7 +73,7 @@ export const AGENCY_GALLERIES: Gallery[] = [
   {
     tag: "L'impact",
     title: "Séquence 05 — L'impact",
-    gradient: "linear-gradient(160deg,#0E1A44,#E5007D 130%)",
+    color: "#16255C",
     slots: [
       { span: "wide" },
       {},

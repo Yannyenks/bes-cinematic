@@ -61,7 +61,7 @@ export function Devis() {
       <div className="relative z-10 mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:px-10">
         <Reveal direction="left">
           <span className="font-display mb-6 inline-flex items-center gap-3 text-[0.78rem] font-bold uppercase tracking-[0.22em] text-magenta">
-            <span className="h-px w-9 bg-gradient-to-r from-magenta to-cyan" />
+            <span className="h-px w-9 bg-magenta" />
             Devis
           </span>
           <h2 className="font-display text-[clamp(1.7rem,3.6vw,2.6rem)] font-extrabold leading-[1.15] text-white">

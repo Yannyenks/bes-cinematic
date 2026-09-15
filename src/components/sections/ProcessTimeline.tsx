@@ -27,7 +27,7 @@ export function ProcessTimeline() {
     <div ref={rowRef} className="relative mt-16">
       <div className="pointer-events-none absolute left-0 right-0 top-[2.4rem] hidden h-px bg-white/10 md:block" />
       <div
-        className="pointer-events-none absolute left-0 top-[2.4rem] hidden h-px bg-gradient-to-r from-magenta via-cyan to-magenta transition-all duration-[1600ms] ease-out md:block"
+        className="pointer-events-none absolute left-0 top-[2.4rem] hidden h-px bg-cyan transition-all duration-[1600ms] ease-out md:block"
         style={{ width: active ? "100%" : "0%" }}
       />
 
@@ -42,7 +42,11 @@ export function ProcessTimeline() {
               transition: `opacity 700ms ease-out ${300 + i * 220}ms, transform 700ms cubic-bezier(0.16,1,0.3,1) ${300 + i * 220}ms`,
             }}
           >
-            <span className="font-display relative z-10 mb-4 block bg-gradient-to-r from-magenta to-cyan bg-clip-text text-5xl font-extrabold text-transparent">
+            <span
+              className={`font-display relative z-10 mb-4 block text-5xl font-extrabold ${
+                i % 2 === 0 ? "text-magenta" : "text-cyan"
+              }`}
+            >
               0{i + 1}
             </span>
             <h3 className="font-display text-lg font-bold text-white">

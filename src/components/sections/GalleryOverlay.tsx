@@ -69,7 +69,7 @@ export function GalleryOverlay({
 
         {gallery && (
           <div className="pb-10">
-            <PhotoCarousel count={gallery.slots.length} gradient={gallery.gradient} />
+            <PhotoCarousel count={gallery.slots.length} color={gallery.color} />
           </div>
         )}
       </div>

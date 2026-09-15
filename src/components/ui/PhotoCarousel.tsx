@@ -5,10 +5,10 @@ import { MediaPlaceholder } from "@/components/ui/MediaPlaceholder";
 
 export function PhotoCarousel({
   count,
-  gradient,
+  color,
 }: {
   count: number;
-  gradient: string;
+  color: string;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
@@ -46,7 +46,7 @@ export function PhotoCarousel({
           <div
             key={i}
             className="relative aspect-video w-[80%] flex-shrink-0 snap-center overflow-hidden rounded-2xl sm:w-[60%] md:w-[50%]"
-            style={{ background: gradient }}
+            style={{ background: color }}
           >
             <div className="absolute inset-0 bg-black/20" />
             <MediaPlaceholder label={`Photo ${i + 1}`} kind="photo" />
