@@ -42,6 +42,13 @@ body {
   color: var(--color-white);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none !important;
+  }
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);

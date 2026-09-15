@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ProjectTile } from "@/components/sections/ProjectTile";
+import { ProjectPanel } from "@/components/sections/ProjectPanel";
+import { CaseStudyOverlay } from "@/components/sections/CaseStudyOverlay";
 import { PROJECTS } from "@/data/projects";
 
 export function Portfolio() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section
       id="realisations"
@@ -20,20 +26,24 @@ export function Portfolio() {
             L&apos;album de nos expériences.
           </h2>
         </Reveal>
-
-        <Reveal direction="scale" delay={160}>
-          <div className="mt-14 grid auto-rows-[230px] grid-cols-2 gap-5 sm:grid-cols-3">
-            {PROJECTS.map((project) => (
-              <ProjectTile key={project.title} project={project} />
-            ))}
-          </div>
-        </Reveal>
-
-        <p className="mt-6 text-sm italic text-white/40">
-          Les visuels de cette section seront remplacés par les photographies
-          officielles des évènements.
-        </p>
       </div>
+
+      <div className="relative z-10 mt-16">
+        {PROJECTS.map((project, i) => (
+          <ProjectPanel
+            key={project.title}
+            project={project}
+            index={i}
+            total={PROJECTS.length}
+            onOpen={() => setOpenIndex(i)}
+          />
+        ))}
+      </div>
+
+      <CaseStudyOverlay
+        project={openIndex !== null ? PROJECTS[openIndex] : null}
+        onClose={() => setOpenIndex(null)}
+      />
     </section>
   );
 }

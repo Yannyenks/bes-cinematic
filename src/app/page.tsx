@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import { Hero } from "@/components/hero/Hero";
 import { Agency } from "@/components/sections/Agency";
 import { Footprint } from "@/components/sections/Footprint";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <SmoothScroll />
+      <CustomCursor />
       <Header />
       <main className="flex-1">
         <Hero />
