@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import gsap from "gsap";
 
@@ -16,6 +16,7 @@ export function Hero() {
   const leadRef = useRef<HTMLParagraphElement>(null);
   const actionsRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLDivElement>(null);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   useLayoutEffect(() => {
     const reduced = window.matchMedia(
@@ -69,13 +70,15 @@ export function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-black"
     >
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[2500ms] ease-out ${
+          videoEnded ? "opacity-0" : "opacity-100"
+        }`}
         src="/media/videos/hero-dna.mp4"
         autoPlay
         muted
-        loop
         playsInline
         preload="auto"
+        onEnded={() => setVideoEnded(true)}
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/85" />

@@ -4,7 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { ScrollFocus } from "@/components/ui/ScrollFocus";
 import { AGENCY_BEATS } from "@/data/agencyBeats";
 
-export function NarrativeSequence() {
+export function NarrativeSequence({
+  activeIndex = null,
+}: {
+  activeIndex?: number | null;
+}) {
   const railRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
 
@@ -34,14 +38,24 @@ export function NarrativeSequence() {
 
       {AGENCY_BEATS.map((beat, i) => {
         const parts = beat.text.split("Business Event Solutions");
+        const isActive = activeIndex === i;
         return (
           <ScrollFocus key={beat.tag}>
-            <div className="relative">
-              <span className="absolute -left-8 top-1.5 hidden h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-cyan shadow-[0_0_12px_2px_rgba(47,168,224,0.7)] md:block" />
+            <div
+              id={`beat-${i}`}
+              className={`relative -mx-4 rounded-2xl px-4 py-2 transition-colors duration-500 md:-mx-5 md:px-5 ${
+                isActive ? "bg-white/[0.05]" : "bg-transparent"
+              }`}
+            >
+              <span
+                className={`absolute -left-8 top-1.5 hidden h-2.5 w-2.5 -translate-x-1/2 rounded-full transition-all duration-500 md:block ${
+                  isActive
+                    ? "scale-150 bg-white shadow-[0_0_16px_4px_rgba(255,255,255,0.85)]"
+                    : "bg-cyan shadow-[0_0_12px_2px_rgba(47,168,224,0.7)]"
+                }`}
+              />
               <div className="font-display mb-2 flex items-center gap-2.5 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-cyan/85">
-                <span className="tabular-nums text-white/30">
-                  0{i + 1}
-                </span>
+                <span className="tabular-nums text-white/30">0{i + 1}</span>
                 Séquence — {beat.tag}
               </div>
               <p className="text-[1.02rem] leading-relaxed text-white/70">

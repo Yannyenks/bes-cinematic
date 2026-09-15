@@ -1,11 +1,24 @@
+"use client";
+
+import { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { AmbientGlow } from "@/components/ui/AmbientGlow";
 import { ScrubVideo } from "@/components/ui/ScrubVideo";
 import { KineticHeadline } from "@/components/ui/KineticHeadline";
 import { NarrativeSequence } from "@/components/sections/NarrativeSequence";
+import { MissionMap } from "@/components/sections/MissionMap";
 
 export function Agency() {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  function handleSelect(i: number) {
+    setSelected(i);
+    document
+      .getElementById(`beat-${i}`)
+      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
   return (
     <section
       id="agence"
@@ -33,6 +46,10 @@ export function Agency() {
           className="font-display max-w-4xl text-[clamp(1.9rem,4.2vw,3.4rem)] font-extrabold leading-[1.12] text-white"
         />
 
+        <Reveal delay={120} className="mt-12">
+          <MissionMap selected={selected} onSelect={handleSelect} />
+        </Reveal>
+
         <div className="mt-14 grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
           <Reveal delay={140} className="md:sticky md:top-32 md:self-start">
             <TiltCard>
@@ -49,7 +66,7 @@ export function Agency() {
             </TiltCard>
           </Reveal>
 
-          <NarrativeSequence />
+          <NarrativeSequence activeIndex={selected} />
         </div>
       </AmbientGlow>
     </section>
