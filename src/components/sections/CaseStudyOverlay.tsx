@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useCursorStore } from "@/lib/cursorStore";
 import { MediaPlaceholder } from "@/components/ui/MediaPlaceholder";
+import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
 import type { Project } from "@/data/projects";
 
 export function CaseStudyOverlay({
@@ -80,20 +81,9 @@ export function CaseStudyOverlay({
           <p className="font-display mt-10 mb-4 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-white/40">
             Galerie photo de l&apos;évènement
           </p>
-          <div className="grid auto-rows-[110px] grid-cols-3 gap-3 sm:grid-cols-4 md:auto-rows-[130px]">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className={`relative overflow-hidden rounded-xl ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
-                }`}
-                style={{ background: project?.gradient }}
-              >
-                <div className="absolute inset-0 bg-black/25" />
-                <MediaPlaceholder label={`Photo ${i + 1}`} kind="photo" />
-              </div>
-            ))}
-          </div>
+          {project && (
+            <PhotoCarousel count={10} gradient={project.gradient} />
+          )}
 
           <a
             href="#devis"

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useCursorStore } from "@/lib/cursorStore";
-import { MediaPlaceholder } from "@/components/ui/MediaPlaceholder";
+import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
 import type { Gallery } from "@/data/galleries";
 
 export function GalleryOverlay({
@@ -67,20 +67,11 @@ export function GalleryOverlay({
           </button>
         </div>
 
-        <div className="grid auto-rows-[150px] grid-cols-2 gap-4 pb-10 sm:grid-cols-4 md:auto-rows-[180px]">
-          {gallery?.slots.map((slot, i) => (
-            <div
-              key={i}
-              className={`relative overflow-hidden rounded-2xl ${
-                slot.span === "tall" ? "row-span-2" : ""
-              } ${slot.span === "wide" ? "col-span-2" : ""}`}
-              style={{ background: gallery.gradient }}
-            >
-              <div className="absolute inset-0 bg-black/25" />
-              <MediaPlaceholder label={`Photo ${i + 1}`} kind="photo" />
-            </div>
-          ))}
-        </div>
+        {gallery && (
+          <div className="pb-10">
+            <PhotoCarousel count={gallery.slots.length} gradient={gallery.gradient} />
+          </div>
+        )}
       </div>
     </div>
   );
